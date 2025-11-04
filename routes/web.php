@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    });
+        return view('dashboard.index');
+    })->name('dashboard');
 });
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
