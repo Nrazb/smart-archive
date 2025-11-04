@@ -38,7 +38,7 @@
             {{-- Form Login --}}
             <form method="POST" action="{{ route('login') }}" class="space-y-4">
                 @csrf
-                <input type="text" name="username" placeholder="Username"
+                <input type="email" name="email" placeholder="Masukan email anda"
                     value="{{ old('username') }}"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
                 <input type="password" name="password" placeholder="Password"

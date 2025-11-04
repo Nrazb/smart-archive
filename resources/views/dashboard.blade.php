@@ -9,5 +9,7 @@
 </head>
 <body>
     <h1 class="text-blue-900">halo dunia</h1>
+
+    <a href="/logout">LOGOUT DISINI BRO</a>
 </body>
 </html>

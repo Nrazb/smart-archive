@@ -42,7 +42,7 @@
                 <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
 
-                <input type="text" name="username" placeholder="Username" value="{{ old('username') }}"
+                <input type="text" name="name" placeholder="Name" value="{{ old('name') }}"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
 
                 <input type="password" name="password" placeholder="Password"
