@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - Aplikasi Pengarsipan Surat</title>
+    <title>Register - Aplikasi Pengarsipan Surat</title>
     @vite('resources/css/app.css')
 </head>
 <body class="bg-blue-200 flex items-center justify-center min-h-screen">
+
     <div class="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row overflow-hidden w-[90%] md:w-[800px]">
         <!-- Bagian Kiri -->
         <div class="hidden md:flex md:w-1/2 bg-white items-center justify-center p-6">
-            <img src="{{ asset('images/login-illustration.png') }}" alt="Ilustrasi Login" class="w-4/5">
+            <img src="{{ asset('images/login-illustration.png') }}" alt="Ilustrasi" class="w-4/5">
         </div>
+
         <!-- Bagian Kanan -->
         <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
             <div class="text-center mb-6">
@@ -25,7 +26,7 @@
                 </div>
                 <h2 class="text-lg font-semibold text-gray-700">Aplikasi Pengarsipan Surat</h2>
             </div>
-            {{-- Pesan Error --}}
+
             @if ($errors->any())
                 <div class="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm">
                     <ul>
@@ -35,23 +36,26 @@
                     </ul>
                 </div>
             @endif
-            {{-- Form Login --}}
-            <form method="POST" action="{{ route('login') }}" class="space-y-4">
+
+            <form action="{{ route('register') }}" method="POST" class="space-y-4">
                 @csrf
-                <input type="text" name="username" placeholder="Username"
-                    value="{{ old('username') }}"
+                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+
+                <input type="text" name="username" placeholder="Username" value="{{ old('username') }}"
+                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+
                 <input type="password" name="password" placeholder="Password"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+
+                <input type="password" name="password_confirmation" placeholder="Konfirmasi Password"
+                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+
                 <button type="submit"
                         class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg py-2 transition duration-200">
-                    LOGIN
+                    REGISTER
                 </button>
             </form>
-            <p class="text-center text-sm text-gray-500 mt-4">
-                Belum punya akun?
-                <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Daftar Sekarang</a>
-            </p>
         </div>
     </div>
 </body>
