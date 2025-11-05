@@ -10,6 +10,21 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 });
 
+Route::get('/surat-masuk', [AuthController::class, 'indexSuratMasuk'])->name('surat.masuk');
+Route::get('/surat-masuk/create', [AuthController::class, 'createSuratMasuk'])->name('surat.masuk.create');
+Route::post('/surat-masuk', [AuthController::class, 'storeSuratMasuk'])->name('surat.masuk.store');
+Route::get('/surat-masuk/{id}/edit', [AuthController::class, 'editSuratMasuk'])->name('surat.masuk.edit');
+Route::put('/surat-masuk/{id}', [AuthController::class, 'updateSuratMasuk'])->name('surat.masuk.update');
+Route::delete('/surat-masuk/{id}', [AuthController::class, 'destroySuratMasuk'])->name('surat.masuk.destroy');
+
+Route::get('/surat-keluar', [AuthController::class, 'indexSuratKeluar'])->name('surat.keluar');
+Route::get('/surat-keluar/create', [AuthController::class, 'createSuratKeluar'])->name('surat.keluar.create');
+Route::post('/surat-keluar', [AuthController::class, 'storeSuratKeluar'])->name('surat.keluar.store');
+Route::get('/surat-keluar/{id}/edit', [AuthController::class, 'editSuratKeluar'])->name('surat.keluar.edit');
+Route::put('/surat-keluar/{id}', [AuthController::class, 'updateSuratKeluar'])->name('surat.keluar.update');
+Route::delete('/surat-keluar/{id}', [AuthController::class, 'destroySuratKeluar'])->name('surat.keluar.destroy');
+
+
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
