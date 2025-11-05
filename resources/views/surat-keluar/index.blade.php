@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Surat Masuk')
+@section('title', 'Surat Keluar')
 
 @section('content')
 <div class="w-full">
@@ -26,19 +26,19 @@
     </div>
 
     {{-- Tabel Data --}}
-    <div class="mt-6 bg-white shadow-lg rounded-xl overflow-x-hidden">
+    <div class="mt-6 bg-white shadow-lg rounded-xl overflow-x-hidden p-0">
         <div class="overflow-x-auto">
-            <table class="min-w-[1000px] table-auto divide-y divide-gray-200">
+        <table class="w-full border-collapse divide-y divide-gray-200">
             <thead class="bg-gray-50">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No Agenda</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Surat</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tujuan Surat</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nomor Surat</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perihal</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File Surat</th>
-                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                        <th class="px-3 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No Agenda</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Surat</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tujuan Surat</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nomor Surat</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Perihal</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File Surat</th>
+                        <th class="px-2 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -52,9 +52,18 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-[150px]">Penawaran Produk</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-[150px]">surat_penawaran.pdf</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center space-x-1">
-                            <a href="#" class="inline-flex items-center px-3 py-1 bg-green-500 text-white text-xs font-bold rounded hover:bg-green-600 transition">View</a>
-                            <a href="#" class="inline-flex items-center px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded hover:bg-yellow-600 transition">Edit</a>
-                            <button type="button" class="inline-flex items-center px-3 py-1 bg-red-600 text-white text-xs font-bold rounded hover:bg-red-700 transition">Delete</button>
+                            <a href="{{ route('show-surat-keluar') }}" class="inline-flex items-center px-3 py-1 bg-green-500 text-white text-xs font-bold rounded hover:bg-green-600 transition">View</a>
+                            <a href="{{ route('edit-surat-keluar') }}" class="inline-flex items-center px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded hover:bg-yellow-600 transition">Edit</a>
+                            <form action="{{ route('destroy-surat-keluar') }}" method="POST"
+                                onsubmit="return confirm('Yakin ingin menghapus surat ini?')"
+                                class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                    class="inline-flex items-center px-3 py-1 bg-red-600 text-white text-xs font-bold rounded hover:bg-red-700 transition">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     {{-- @endforeach --}}
