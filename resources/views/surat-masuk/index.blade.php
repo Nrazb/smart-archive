@@ -9,10 +9,7 @@
         <h1 class="text-3xl font-semibold text-gray-800 mb-4 md:mb-0">Surat Masuk</h1>
 
         <div class="flex flex-wrap items-center space-x-3">
-            {{-- Tombol Tambah --}}
-            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center mb-2 md:mb-0">
-                <i class="fas fa-plus-circle mr-2"></i> Add New
-            </a>
+
             
             {{-- Search Box --}}
             <form action="#" method="GET" class="relative">
@@ -65,10 +62,7 @@
     
     {{-- Footer Tabel --}}
     <div class="flex items-center justify-between mt-4">
-        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center">
-            <i class="fas fa-file-export mr-2"></i> Export
-        </button>
-        
+
         <span class="text-sm text-gray-600">Records : 1 of 1</span>
     </div>
 

@@ -10,7 +10,7 @@
 
         <div class="flex flex-wrap items-center space-x-3">
             {{-- Tombol Tambah --}}
-            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center mb-2 md:mb-0">
+            <a href="{{ route('create-surat-keluar') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center mb-2 md:mb-0">
                 <i class="fas fa-plus-circle mr-2"></i> Add New
             </a>
             

@@ -18,11 +18,21 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// routes/web.php
+// surat masuk
 Route::get('/surat-masuk', function () {
     return view('surat-masuk.index');
 })->name('surat-masuk');
 
+// surat keluar
 Route::get('/surat-keluar', function () {
     return view('surat-keluar.index');
 })->name('surat-keluar');
+
+Route::get('/surat-keluar/create', function () {
+    return view('surat-keluar.create');
+})->name('create-surat-keluar');
+
+Route::get('/surat-keluar/edit', function () {
+    return view('surat-keluar.edit');
+})->name('edit-surat-keluar');
+

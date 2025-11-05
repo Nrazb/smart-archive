@@ -25,6 +25,16 @@
                 <a href="{{ route('dashboard') }}" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Dashboard</a>
                 <a href="{{ route('surat-masuk') }}" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Surat Masuk</a>
                 <a href="{{ route('surat-keluar') }}" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Surat Keluar</a>
+            {{-- Logout di bagian bawah --}}
+                <div class="mt-8 border-t border-gray-700 pt-4">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit"
+                            class="w-full text-left py-2 px-3 bg-red-600 hover:bg-red-700 rounded text-white font-medium">
+                            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                        </button>
+                    </form>
+                </div>
             </nav>
         </aside>
 
