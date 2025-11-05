@@ -10,8 +10,8 @@
 
         <div class="flex flex-wrap items-center space-x-3">
             {{-- Tombol Tambah --}}
-            <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center mb-2 md:mb-0">
-                <i class="fas fa-plus-circle mr-2"></i> Add New Surat Masuk
+            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center mb-2 md:mb-0">
+                <i class="fas fa-plus-circle mr-2"></i> Add New
             </a>
             
             {{-- Search Box --}}
@@ -26,10 +26,10 @@
     </div>
 
     {{-- Tabel Data --}}
-    <div class="mt-6 bg-white shadow-lg rounded-xl overflow-hidden">
+    <div class="mt-6 bg-white shadow-lg rounded-xl overflow-x-hidden">
         <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+            <table class="min-w-[1000px] table-auto divide-y divide-gray-200">
+            <thead class="bg-gray-50">
                     <tr>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No Agenda</th>
@@ -47,10 +47,10 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2025-11-05</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PT. Maju Bersama</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">MB/A-001/VIII/21</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Penawaran Produk</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">surat_penawaran.pdf</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-[150px]">PT. Maju Bersama</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-[150px]">MB/A-001/VIII/21</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-[150px]">Penawaran Produk</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate max-w-[150px]">surat_penawaran.pdf</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center space-x-1">
                             <a href="#" class="inline-flex items-center px-3 py-1 bg-green-500 text-white text-xs font-bold rounded hover:bg-green-600 transition">View</a>
                             <a href="#" class="inline-flex items-center px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded hover:bg-yellow-600 transition">Edit</a>
@@ -65,7 +65,7 @@
     
     {{-- Footer Tabel --}}
     <div class="flex items-center justify-between mt-4">
-        <button class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center">
+        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center">
             <i class="fas fa-file-export mr-2"></i> Export
         </button>
         

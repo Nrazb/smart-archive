@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100 font-sans opacity-0">
-    <div class="flex min-h-screen overflow-hidden">
+    <div class="flex min-h-screen overflow-x-hidden overflow-y-auto">
 
         {{-- Sidebar --}}
         <aside class="w-[200px] min-w-[200px] max-w-[200px] bg-blue-400 text-white flex flex-col">

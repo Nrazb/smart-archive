@@ -20,9 +20,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // routes/web.php
 Route::get('/surat-masuk', function () {
-    return view('dashboard.surat-masuk');
+    return view('surat-masuk.index');
 })->name('surat-masuk');
 
 Route::get('/surat-keluar', function () {
-    return view('dashboard.surat-keluar');
+    return view('surat-keluar.index');
 })->name('surat-keluar');
