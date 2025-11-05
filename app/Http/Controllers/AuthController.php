@@ -64,4 +64,19 @@ class AuthController extends Controller
 
         return redirect('/login');
     }
+    public function up(): void{
+    Schema::create('surats', function (Blueprint $table) {
+        $table->id();
+        $table->string('nomor_surat')->unique();
+        $table->string('perihal');
+        $table->string('kategori');
+        $table->string('file_path')->nullable();
+        $table->unsignedBigInteger('user_id');
+        $table->timestamps();
++
+        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+    });
+
+    
+}
 }
