@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Dashboard')</title>
+    <link rel="stylesheet" href="bootstrap/css/">
     @vite('resources/css/app.css')
 </head>
-<body class="bg-gray-100 font-sans">
-
-    <div class="flex h-screen overflow-hidden">
+<body class="bg-gray-100 font-sans opacity-0">
+    <div class="flex min-h-screen overflow-hidden">
 
         {{-- Sidebar --}}
-        <aside class="w-64 bg-blue-400 text-white flex flex-col">
+        <aside class="w-[200px] min-w-[200px] max-w-[200px] bg-blue-400 text-white flex flex-col">
             <div class="flex items-center justify-center h-20 bg-blue-500">
                 <div class="bg-blue-600 rounded-full p-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
@@ -23,8 +23,8 @@
             </div>
             <nav class="flex-1 p-4 space-y-3">
                 <a href="{{ route('dashboard') }}" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Dashboard</a>
-                <a href="#" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Surat Masuk</a>
-                <a href="#" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Surat Keluar</a>
+                <a href="{{ route('surat-masuk') }}" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Surat Masuk</a>
+                <a href="{{ route('surat-keluar') }}" class="block px-4 py-2 rounded hover:bg-blue-500 font-medium">Surat Keluar</a>
             </nav>
         </aside>
 
@@ -52,6 +52,36 @@
         </div>
 
     </div>
+    {{-- Footer --}}
+        <footer class="bg-white border-t p-4 text-sm text-gray-600 text-center">
+                All Rights Reserved | © ApkArshipSurat - 2025
+                <div class="mt-1 space-x-3 hidden md:inline-block">
+                    <a href="#" class="hover:text-indigo-600">About Us</a> |
+                    <a href="#" class="hover:text-indigo-600">Help And FAQ</a> |
+                    <a href="#" class="hover:text-indigo-600">Contact Us</a> |
+                    <a href="#" class="hover:text-indigo-600">Privacy Policy</a> |
+                    <a href="#" class="hover:text-indigo-600">Terms And Conditions</a>
+                </div>
+            </footer>
+        <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("opacity-100");
+        });
 
+        document.querySelectorAll('a[href]').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+            link.addEventListener('click', e => {
+                if (link.target !== "_blank" && !e.ctrlKey && !e.metaKey) {
+                e.preventDefault();
+                document.body.classList.add('opacity-0');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 200);
+                }
+            });
+            }
+        });
+        </script>
 </body>
 </html>

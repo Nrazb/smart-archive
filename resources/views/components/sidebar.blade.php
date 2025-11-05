@@ -1,4 +1,4 @@
-<aside class="w-64 bg-blue-400 text-white flex flex-col rounded-r-3xl">
+<aside class="w-[200px] min-w-[200px] max-w-[200px] bg-blue-400 text-white flex flex-col">
     <div class="flex items-center justify-center mt-6 mb-8">
         <div class="bg-blue-600 p-3 rounded-full">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24"
@@ -10,8 +10,14 @@
     </div>
 
     <nav class="flex-1 space-y-4 px-6">
-        <a href="{{ route('dashboard') }}" class="block font-semibold text-black">Dashboard</a>
-        <a href="#" class="block text-white hover:text-black transition">Surat Masuk</a>
-        <a href="#" class="block text-white hover:text-black transition">Surat Keluar</a>
+        <a href="{{ route('dashboard') }}" class="block font-semibold text-white hover:text-black transition @if(request()->routeIs('dashboard')) text-black @endif">
+            Dashboard
+        </a>
+        <a href="{{ route('surat-masuk') }}" class="block text-white hover:text-black transition @if(request()->routeIs('surat-masuk')) text-black @endif">
+            Surat Masuk
+        </a>
+        <a href="{{ route('surat-keluar') }}" class="block text-white hover:text-black transition @if(request()->routeIs('surat-keluar')) text-black @endif">
+            Surat Keluar
+        </a>
     </nav>
 </aside>

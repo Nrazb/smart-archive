@@ -17,3 +17,12 @@ Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// routes/web.php
+Route::get('/surat-masuk', function () {
+    return view('dashboard.surat-masuk');
+})->name('surat-masuk');
+
+Route::get('/surat-keluar', function () {
+    return view('dashboard.surat-keluar');
+})->name('surat-keluar');
