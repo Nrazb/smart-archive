@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login - Aplikasi Pengarsipan Surat</title>
     @vite('resources/css/app.css')
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body class="bg-blue-200 flex items-center justify-center min-h-screen">
     <div class="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row overflow-hidden w-[90%] md:w-[800px]">
@@ -25,21 +26,14 @@
                 </div>
                 <h2 class="text-lg font-semibold text-gray-700">Aplikasi Pengarsipan Surat</h2>
             </div>
-            {{-- Pesan Error --}}
-            @if ($errors->any())
-                <div class="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>- {{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            {{-- Form Login --}}
-            <form method="POST" action="{{ route('login') }}" class="space-y-4">
+
+            <div id="error-message" class="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm hidden">
+                <ul id="error-list"></ul>
+            </div>
+
+            <form action="{{ route('login')}}" method="POST" class="space-y-4">
                 @csrf
                 <input type="email" name="email" placeholder="Masukan email anda"
-                    value="{{ old('username') }}"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
                 <input type="password" name="password" placeholder="Password"
                     class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">

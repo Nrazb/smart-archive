@@ -1,5 +1,5 @@
-<header class="flex justify-between items-center bg-white shadow-md rounded-xl px-6 py-3 mb-6">
-    <h1 class="text-lg font-semibold text-gray-700">Selamat Datang {{ auth()->user()->name ?? 'User' }} !</h1>
+<header class="flex justify-between items-center bg-white shadow-md px-6 py-3 mb-6">
+    <h1 class="text-lg font-bold text-gray-700">SMART ARCHIVE - Sistem Pengarsipan Surat</h1>
     <div class="flex items-center space-x-3">
         <span class="text-gray-600 font-medium">{{ auth()->user()->name ?? 'User' }}</span>
         <div class="bg-blue-400 rounded-full p-2">

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Aplikasi Pengarsipan Surat</title>
     @vite('resources/css/app.css')
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body class="bg-blue-200 flex items-center justify-center min-h-screen">
 
@@ -27,32 +28,20 @@
                 <h2 class="text-lg font-semibold text-gray-700">Aplikasi Pengarsipan Surat</h2>
             </div>
 
-            @if ($errors->any())
-                <div class="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>- {{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            {{-- Pesan Error --}}
+            <div id="error-message" class="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm hidden">
+                <ul id="error-list"></ul>
+            </div>
 
-            <form action="{{ route('register') }}" method="POST" class="space-y-4">
+            {{-- Form Register --}}
+            <form action="{{ route('register')}}" method="POST" class="space-y-4">
                 @csrf
-                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"
-                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+                <input type="email" name="email" placeholder="Email" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+                <input type="text" name="name" placeholder="Name" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+                <input type="password" name="password" placeholder="Password" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+                <input type="password" name="password_confirmation" placeholder="Konfirmasi Password" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
 
-                <input type="text" name="name" placeholder="Name" value="{{ old('name') }}"
-                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
-
-                <input type="password" name="password" placeholder="Password"
-                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
-
-                <input type="password" name="password_confirmation" placeholder="Konfirmasi Password"
-                    class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
-
-                <button type="submit"
-                        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg py-2 transition duration-200">
+                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg py-2 transition duration-200">
                     REGISTER
                 </button>
             </form>
