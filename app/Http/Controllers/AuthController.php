@@ -99,7 +99,9 @@ class AuthController extends Controller
             $user = Auth::user();
             $token = bin2hex(random_bytes(32));
 
-            session(['api_token' => $token]);
+            // Simpan token dalam bentuk hash di database
+            $user->api_token = hash('sha256', $token);
+            $user->save();
 
             return response()->json([
                 'message' => 'Login berhasil',
@@ -110,6 +112,7 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Email atau password salah'], 401);
     }
+
 
     public function logoutApi(Request $request)
     {

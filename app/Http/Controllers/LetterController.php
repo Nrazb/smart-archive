@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Letter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class LetterController extends Controller
@@ -11,13 +12,14 @@ class LetterController extends Controller
 
     public function index()
     {
-        $letters = Letter::latest()->paginate(10);
+        $letters = Letter::where('user_id', Auth::id())
+                     ->latest()
+                     ->paginate(10);
         return view('letters.index', compact('letters'));
     }
 
     public function create()
     {
-        // $letters = Letter::all();
         return view('letters.create', compact('letters'));
     }
 
