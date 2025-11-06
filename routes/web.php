@@ -12,9 +12,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');})->name('dashboard');
-    Route::get('/letters_archive', function() {
-        return view('letters.create');});
+    Route::get('/dashboard', [LetterController::class, 'dashboard']);
     Route::resource('letters', LetterController::class);
 });

@@ -21,36 +21,25 @@
         </div>
 
     </div>
-    {{-- Footer --}}
-        <footer class="bg-white border-t p-4 text-sm text-gray-600 text-center">
-                All Rights Reserved | © ApkArshipSurat - 2025
-                <div class="mt-1 space-x-3 hidden md:inline-block">
-                    <a href="#" class="hover:text-indigo-600">About Us</a> |
-                    <a href="#" class="hover:text-indigo-600">Help And FAQ</a> |
-                    <a href="#" class="hover:text-indigo-600">Contact Us</a> |
-                    <a href="#" class="hover:text-indigo-600">Privacy Policy</a> |
-                    <a href="#" class="hover:text-indigo-600">Terms And Conditions</a>
-                </div>
-            </footer>
-        <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.add("opacity-100");
-        });
+    <script>
+    window.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("opacity-100");
+    });
 
-        document.querySelectorAll('a[href]').forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
-            link.addEventListener('click', e => {
-                if (link.target !== "_blank" && !e.ctrlKey && !e.metaKey) {
-                e.preventDefault();
-                document.body.classList.add('opacity-0');
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 200);
-                }
-            });
+    document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+        link.addEventListener('click', e => {
+            if (link.target !== "_blank" && !e.ctrlKey && !e.metaKey) {
+            e.preventDefault();
+            document.body.classList.add('opacity-0');
+            setTimeout(() => {
+                window.location.href = href;
+            }, 200);
             }
         });
-        </script>
+        }
+    });
+    </script>
 </body>
 </html>

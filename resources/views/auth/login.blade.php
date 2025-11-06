@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - Aplikasi Pengarsipan Surat</title>
+    <title>Login - Sistem Pengarsipan Surat</title>
     @vite('resources/css/app.css')
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -24,7 +24,7 @@
                         </svg>
                     </div>
                 </div>
-                <h2 class="text-lg font-semibold text-gray-700">Aplikasi Pengarsipan Surat</h2>
+                <h2 class="text-lg font-semibold text-gray-700">Sistem Pengarsipan Surat</h2>
             </div>
 
             <div id="error-message" class="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm hidden">

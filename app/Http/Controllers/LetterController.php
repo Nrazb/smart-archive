@@ -9,18 +9,29 @@ use Illuminate\Support\Facades\Storage;
 
 class LetterController extends Controller
 {
+    public function dashboard()
+    {
+        $suratMasuk = Letter::where('user_id', Auth::id())
+                            ->where('kategori', 'masuk')
+                            ->count();
+        $suratKeluar = Letter::where('user_id', Auth::id())
+                             ->where('kategori', 'keluar')
+                             ->count();
+        return view('dashboard', compact('suratMasuk', 'suratKeluar'));
+    }
 
     public function index()
     {
         $letters = Letter::where('user_id', Auth::id())
                      ->latest()
                      ->paginate(10);
+
         return view('letters.index', compact('letters'));
     }
 
     public function create()
     {
-        return view('letters.create', compact('letters'));
+        return view('letters.create');
     }
 
     public function store(Request $request)

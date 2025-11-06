@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Aplikasi Pengarsipan Surat</title>
+    <title>Register - Sistem Pengarsipan Surat</title>
     @vite('resources/css/app.css')
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body class="bg-blue-200 flex items-center justify-center min-h-screen">
 
     <div class="bg-white rounded-2xl shadow-lg flex flex-col md:flex-row overflow-hidden w-[90%] md:w-[800px]">
-        <!-- Bagian Kiri -->
         <div class="hidden md:flex md:w-1/2 bg-white items-center justify-center p-6">
             <img src="{{ asset('images/login-illustration.png') }}" alt="Ilustrasi" class="w-4/5">
         </div>
 
-        <!-- Bagian Kanan -->
         <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
             <div class="text-center mb-6">
                 <div class="flex justify-center mb-2">
@@ -25,15 +23,13 @@
                         </svg>
                     </div>
                 </div>
-                <h2 class="text-lg font-semibold text-gray-700">Aplikasi Pengarsipan Surat</h2>
+                <h2 class="text-lg font-semibold text-gray-700">Sistem Pengarsipan Surat</h2>
             </div>
 
-            {{-- Pesan Error --}}
             <div id="error-message" class="bg-red-100 text-red-700 p-2 rounded mb-4 text-sm hidden">
                 <ul id="error-list"></ul>
             </div>
 
-            {{-- Form Register --}}
             <form action="{{ route('register')}}" method="POST" class="space-y-4">
                 @csrf
                 <input type="email" name="email" placeholder="Email" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">

@@ -18,22 +18,22 @@
     <!-- Navigation -->
     <nav class="flex-1 space-y-3 px-6">
         <!-- Dashboard -->
-        <a href="{{ route('dashboard') }}"
+        <a href="/dashboard"
            class="block font-semibold px-3 py-2 rounded-lg transition
            {{ Request::is('dashboard') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
             Dashboard
         </a>
 
-        <a href="/letters_archive"
+        <a href="{{route('letters.create')}}"
            class="block font-semibold px-3 py-2 rounded-lg transition
-           {{ Request::is('letters_archive*') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
+           {{ Request::is('letters/create') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
             Input Arsip Surat
         </a>
 
         <!-- Arsip Surat -->
         <a href="{{route('letters.index')}}"
            class="block font-semibold px-3 py-2 rounded-lg transition
-           {{ Request::is('letters/index*') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
+           {{ Request::is('letters') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
             Arsip Surat
         </a>
 

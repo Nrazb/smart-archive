@@ -11,7 +11,7 @@
             <p class="text-sm opacity-90 mt-1">Telah disimpan</p>
         </div>
         <div class="flex items-center space-x-2 bg-white text-blue-600 px-3 py-1 rounded-lg">
-            <span class="font-semibold">12</span>
+            <span class="font-semibold">{{ $suratMasuk }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -27,7 +27,7 @@
             <p class="text-sm opacity-90 mt-1">Telah disimpan</p>
         </div>
         <div class="flex items-center space-x-2 bg-white text-blue-600 px-3 py-1 rounded-lg">
-            <span class="font-semibold">12</span>
+            <span class="font-semibold">{{ $suratKeluar }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
