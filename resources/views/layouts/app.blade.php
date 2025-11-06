@@ -15,7 +15,7 @@
         {{-- Konten utama --}}
         <div class="flex-1 flex flex-col">
             <header>@include('components.header')</header>
-            <main class="flex-1 p-8 overflow-y-auto">
+            <main class="flex-1 p-4 overflow-y-auto">
                 @yield('content')
             </main>
         </div>

@@ -24,18 +24,17 @@
             Dashboard
         </a>
 
-        <!-- Surat Masuk -->
-        <a href="#"
+        <a href="/letters_archive"
            class="block font-semibold px-3 py-2 rounded-lg transition
-           {{ Request::is('surat-masuk*') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
-            Surat Masuk
+           {{ Request::is('letters_archive*') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
+            Input Arsip Surat
         </a>
 
-        <!-- Surat Keluar -->
-        <a href="#"
+        <!-- Arsip Surat -->
+        <a href="{{route('letters.index')}}"
            class="block font-semibold px-3 py-2 rounded-lg transition
-           {{ Request::is('surat-keluar*') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
-            Surat Keluar
+           {{ Request::is('letters/index*') ? 'text-black' : 'text-white hover:bg-blue-600' }}">
+            Arsip Surat
         </a>
 
         <!-- Logout -->
